@@ -21,24 +21,19 @@ import matplotlib.pyplot as plt
 # Matplot parameters for the matplotlib function to generate a new plot.
 matplotlib.use('TkAgg')
 algod_address = "https://testnet-algorand.api.purestake.io/ps2" # Put Algod Client address here
-algod_token = "nJ3k107ojk7vdh4l7r7Seaa7gtMOZYAe42mNvrmW" # Put Algod Token here
+algod_token = "" # Put Algod Token here
 headers = {"X-API-Key": algod_token }
 # Initializes client for node.
 algod_client = algod.AlgodClient(algod_token,algod_address,headers)
 
 # Escrow creation.
-escrow_address = "Q7Y4STQ3ULFRT6ZSBHRKVEVKZOU7JKOIEZH5V4BDBEWUZ3OVNCSFFKG2V4" # Put in main fund address here
-escrow_mnemonic = "athlete prize floor fire capable inject debate country mechanic run alcohol fence barrel sign hollow fun huge squirrel change trial impulse add knife abstract nature" # Put in main fund receiver_mnemonic here
+escrow_address = "" # Put in main fund address here
+escrow_mnemonic = "" # Put in main fund receiver_mnemonic here
 escrow_key = mnemonic.to_private_key(escrow_mnemonic)
 choice_id = 21364625 # Official Test Asset ID for Choice Coin
 
 
-params = algod_client.suggested_params()
-params.flat_fee = True
-params.fee = 0
-print(params, params.fee)
-atn = AssetTransferTxn(escrow_address, params, escrow_address, 0, choice_id)
-print(atn)
+
 # Decisions.
 #To add more decisions for the election process, add the address for the new decision here.
 #Then, add an appropriate boolean statement at line 100 of this file. Be sure to also add additional 
@@ -52,7 +47,7 @@ corporate_decision_two = "IY7VXCDF5WUEATEQJOTGUHOL5QMGCDKQETHABBOUWR3PZ2S7ZSZSUE
 # Sets up accounts for both the regular election process and the corporate decision process. 
 # Add more accounts to adjust for more decisions.
 clawback_address = "YC3AUTUU3ZPQQTLDNCYD5IT3G5PRAEWPKRDXKJHWKBFTKKNHWKCMHUFIIM"
-clawback_mnemonic = "kid sunny midnight pull armed number undo trophy crunch quarter accident what chef cry witness plug flag cherry detail anger stone rotate today absent until"
+clawback_mnemonic = ""
 clawback_key = mnemonic.to_private_key(clawback_mnemonic)
 
 # This function counts the number of Choice Coin in an account. 
